@@ -45,11 +45,66 @@ var dayMenu ={
 
 sumProducts(2,4,prod);
 
-var inrhtml="";
+var inrhtml ="breakfast:<br><br>";
 
-for(var i=0;i<prod.length;i++){
-    inrhtml+=Object.keys(prod[i])[0]+" - "+prod[i][Object.keys(prod[i])[0]]+"<br>";
+for(var i=0;i<dayMenu.breakfast.length;i++){
+    for (var j=0;j<prod.length;j++){
+        if(dayMenu.breakfast[i]==Object.keys(prod[j])[0]){
+            if(dayMenu.breakfast[i]=="cracker"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }else if(dayMenu.breakfast[i]=="sugar"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+(prod[j][Object.keys(prod[j])[0]]/3).toFixed(0)+"<br>";
+            }else{
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]+"<br>";
+            }
+        }
+    }
 }
+
+inrhtml+="<br><br>dinner:<br><br>";
+
+for(var i=0;i<dayMenu.dinner.length;i++){
+    for (var j=0;j<prod.length;j++){
+        if(dayMenu.dinner[i]==Object.keys(prod[j])[0]){
+            if(dayMenu.dinner[i]=="cracker"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }else if(dayMenu.dinner[i]=="sugar"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+(prod[j][Object.keys(prod[j])[0]]/3).toFixed(0)+"<br>";
+            }
+            else if(dayMenu.dinner[i]=="tea"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }
+            else if(dayMenu.dinner[i]=="salt"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }else{
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]+"<br>";
+            }
+        }
+    }
+}
+
+inrhtml+="<br><br>supper:<br><br>";
+
+for(var i=0;i<dayMenu.supper.length;i++){
+    for (var j=0;j<prod.length;j++){
+        if(dayMenu.supper[i]==Object.keys(prod[j])[0]){
+            if(dayMenu.supper[i]=="cracker"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }else if(dayMenu.supper[i]=="sugar"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+(prod[j][Object.keys(prod[j])[0]]/3).toFixed(0)+"<br>";
+            }
+            else if(dayMenu.supper[i]=="tea"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }
+            else if(dayMenu.supper[i]=="salt"){
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]/2+"<br>";
+            }else{
+                inrhtml+="&ensp;&ensp;"+Object.keys(prod[j])[0]+" - "+prod[j][Object.keys(prod[j])[0]]+"<br>";
+            }
+        }
+    }
+}
+
 document.getElementById('info').innerHTML=inrhtml;
 
 }
